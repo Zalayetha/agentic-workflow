@@ -20,7 +20,7 @@ export function review(reviewInput: ReviewInput) {
     id: "idea-review",
     run: async ({ input }) => {
       const result = await generateReview(JSON.stringify(input), reviewInput.instructions);
-      return result;
+      return result.output;
     }
   });
 }
