@@ -18,6 +18,9 @@ export function review(reviewInput: ReviewInput) {
     description: reviewInput.description,
   }).step({
     id: "idea-review",
-    run: async ({ input }) => generateReview(JSON.stringify(input), reviewInput.instructions)
+    run: async ({ input }) => {
+      const result = await generateReview(JSON.stringify(input), reviewInput.instructions);
+      return result;
+    }
   });
 }
